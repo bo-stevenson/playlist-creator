@@ -1,5 +1,6 @@
 body, html {
   height: 100%;
+  background-image: url("./photos/Vanishing-Stripes.svg");
 }
 
 /* The hero image */
@@ -52,4 +53,15 @@ padding-bottom: 40px;
   width: 100%;
   height: auto;
 
+}
+
+.carousel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.playlistH {
+  text-align: center;
+  color: white;
 }
