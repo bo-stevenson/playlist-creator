@@ -11,3 +11,5 @@ router.get("/", (_req, res) => {
     res.render("index", playlistObject);
   });
 });
+
+module.exports = router;
