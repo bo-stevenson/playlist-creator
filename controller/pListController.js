@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const playlist = require("../models/playlists.js");
+const db = require("../models");
 
 router.get("/", (req, res) => {
-  playlist.all(data => {
+  db.playlist.all(data => {
     const playlistObject = {
       playlist: data
     };
