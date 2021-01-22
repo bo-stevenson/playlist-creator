@@ -1,6 +1,10 @@
 -- MY PLAYLISTS
-
-
+INSERT INTO playlist (song_name, song_cover, artists, song_url, album_cover) VALUES (
+'Godzilla', 
+'https://e-cdns-images.dzcdn.net/images/cover/4d00a7848dc8af475973ff1761ad828d/528x528-000000-80-0-0.jpg',
+'Eminem', 
+'https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3',
+'https://cdns-images.dzcdn.net/images/cover/2e018122cb56986277102d2041a592c8/1000x1000-000000-80-0-0.jpg');
 
 
 -- PARTY DATA

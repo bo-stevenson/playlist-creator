@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const playlist = require("../models/playlists.js");
+const db = require("../models");
 
-router.get("/", (_req, res) => {
-  playlist.all(data => {
+router.get("/", (req, res) => {
+  db.playlist.all(data => {
     const playlistObject = {
-      playlists: data
+      playlist: data
     };
     console.log(playlistObject);
     res.render("index", playlistObject);
