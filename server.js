@@ -14,9 +14,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 const routes = require("./controller/pListcontroller.js");
-
 app.use(routes);
 
-app.listen(PORT, () => {
-  console.log("Server listening on: http://localhost:" + PORT);
+const db = require("./models");
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log("Server listening on: http://localhost:" + PORT);
+  });
 });
