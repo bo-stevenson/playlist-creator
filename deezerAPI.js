@@ -20,7 +20,7 @@ function searchSong(song) {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(response => {
+  }).then((response) => {
     console.log("API call made");
     console.log(response);
     $(songTitle).html(response.data.title);
