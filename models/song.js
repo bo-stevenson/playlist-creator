@@ -15,10 +15,20 @@ module.exports = function(sequelize, DataType) {
       type: DataType.STRING(80),
       allowNull: false,
       unique: false
+    },
+    album_name: {
+      type: DataType.STRING(80),
+      allowNull: false,
+      unique: false
+    },
+    songURL: {
+      type: DataType.STRING(255),
+      allowNull: false,
+      unique: false
     }
   });
   Song.associate = function(models) {
-    Song.belongsTo(models.User);
+    Song.belongsTo(models.Playlist);
   };
   return Song;
 };
