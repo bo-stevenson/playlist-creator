@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 module.exports = function(sequelize, DataType) {
-  const Playlist = sequelize.define("playlist", {
+  const Playlist = sequelize.define("Playlist", {
     name: {
       type: DataType.STRING(70),
       allowNull: false
