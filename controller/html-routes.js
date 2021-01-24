@@ -5,8 +5,8 @@ router.post("/Playlist", async (req, res) => {
   res.json(await db.Playlist.create(req.body));
 });
 
-router.get("/Song/:id", async (req, res) => {
-  res.json(await db.Song.findAll({ where: { id: req.params.id } }));
+router.get("/", async (req, res) => {
+  res.render("index");
 });
 
 router.get("/Playlist", async (req, res) => {

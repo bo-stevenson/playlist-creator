@@ -13,8 +13,11 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("./controller/api-routes.js");
-app.use(routes);
+const api = require("./controller/api-routes.js");
+app.use("/api", api);
+
+const html = require("./controller/html-routes.js");
+app.use("/", html);
 
 const db = require("./models");
 db.sequelize.sync().then(() => {
