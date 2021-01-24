@@ -13,7 +13,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("./controller/api-routes.js");
+const routes = require("./controllers/api-routes.js");
 app.use(routes);
 
 const db = require("./models");

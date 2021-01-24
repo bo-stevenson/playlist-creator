@@ -27,8 +27,12 @@ module.exports = function(sequelize, DataType) {
       unique: false
     }
   });
-  Song.associate = function(models) {
-    Song.belongsTo(models.Playlist);
+  Song.associate = (models) => {
+    Song.belongsTo(models.Playlist, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
   return Song;
 };

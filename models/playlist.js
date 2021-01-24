@@ -1,13 +1,15 @@
 /* eslint-disable camelcase */
 module.exports = function(sequelize, DataType) {
-  const Playlist = sequelize.define("User", {
+  const Playlist = sequelize.define("playlist", {
     name: {
       type: DataType.STRING(70),
       allowNull: false
     }
   });
-  Playlist.associate = function(models) {
-    Playlist.hasMany(models.Song);
+  Playlist.associate = (models) => {
+    Playlist.hasMany(models.Song, {
+      onDelete: "cascade"
+    });
   };
-  return User;
+  return Playlist;
 };
