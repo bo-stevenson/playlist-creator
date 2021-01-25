@@ -6,7 +6,7 @@ router.post("/Playlist", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  res.render("index");
+  res.render("index", { Playlist: await db.Playlist.findAll() });
 });
 
 router.get("/Playlist", async (req, res) => {
