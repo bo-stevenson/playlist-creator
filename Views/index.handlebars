@@ -1,34 +1,24 @@
-  <!--- RECOMMENDED PLAYLIST-->
-  <h2 style="color:white; text-align: center;">Popular Songs!</h2>
-  <div class="container">
-    <div class="row">
-      {{#each party_playlist}}
-      <div class="col-sm-3">
-        <div class="userList">
-          <img class="songImg" id="im"
-            src="https://media.architecturaldigest.com/photos/5890e88033bd1de9129eab0a/4:3/w_960,h_720,c_limit/Artist-Designed%20Album%20Covers%202.jpg"
-            alt="kanye West album cover, teddy bear">
-          <p class="words">Artist: Kanye West</p>
-          <p class="words">Album: Graduation</p>
-          <button type="button" class="btn btn-success" id="playSong">Play</button>
-          <button type="button" class="btn btn-success" id="addSong">Add Song</button>
-        </div>
-      </div>
-      {{/each}}
-    </div>
+<div class="hero-image">
+  <div class="hero-text text-center">
+    <h1>Music</h1>
+    <form class="d-flex text-center">
+      <input style="width: 300px;" class="form-control me-2" type="search" placeholder="Enter Song Title" aria-label="Search" id="songSearch">
+      <button class="btn btn-danger" type="submit" id="songSearchBtn">Search</button>
+    </form>
   </div>
+</div> 
 
-  <!---PLAYLIST-->
-  <h2 style="color:white; text-align: center;">Your created Playlist's!</h2>
-  <div class="container">
-    <div class="row">
-      {{#each playlist}}
-      <div class="col-sm-3">
-        <div class="userList">
-          <p class="words">Playlist: {{this.plName}}</p>
-          <button type="button" class="btn btn-success">Go to playlist</button>
-        </div>
+<!--- CREATED PLAYLIST-->
+<h2 style="color:white; text-align: center;">Your created Playlist's!</h2>
+<div class="container">
+  <div class="row">
+    {{#each playlist}}
+    <div class="col-sm-3">
+      <div class="userList">
+        <p class="words">Playlist: {{this.plName}}</p>
+        <button type="button" class="btn btn-success">Go to playlist</button>
       </div>
-      {{/each}}
     </div>
+    {{/each}}
   </div>
+</div>

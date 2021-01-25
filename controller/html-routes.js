@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
 router.get("/playlist/:id", async (req, res) => {
   const foundSong = JSON.parse(JSON.stringify(await db.Playlist.findAll()));
-
+  foundSong.getSongs(Song);
   // save into variable await find the playlist id requested
   // parse and stringify requested data
   // sequelize savedVariable.getSongs()

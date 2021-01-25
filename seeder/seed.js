@@ -67,7 +67,7 @@ const db = require("../models");
   });
 
   // adding the association
-  await pList1.addSongs(song1, song2);
+  await pList1.addSongs([song1, song2]);
 
   console.log("Data seeded successfully!");
   process.exit(0);

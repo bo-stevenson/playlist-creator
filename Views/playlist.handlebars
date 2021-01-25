@@ -1,0 +1,17 @@
+<h1 class="header">Playlist Name {{this.plName}}</h1>
+<div class="container">
+  <div class="row">
+    {{each Song}}
+    <div class="col-sm-3">
+      <div class="userList">
+        <img class="songImg" id="im"
+          src="{{this.album_cover}}"
+          alt="kanye West album cover, teddy bear">
+        <p class="words">Title: {{this.song_name}}</p>
+        <p class="words">Artist: {{this.artist}}</p>
+        <button type="button" class="btn btn-success" onClick="{{this.song_url}}">Play song</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
