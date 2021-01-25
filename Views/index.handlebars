@@ -19,19 +19,14 @@
   </div>
 
   <!---PLAYLIST-->
-  <h2 style="color:white; text-align: center;">Your created Playlist!</h2>
+  <h2 style="color:white; text-align: center;">Your created Playlist's!</h2>
   <div class="container">
     <div class="row">
-      {{#each Playlist}}
+      {{#each playlist}}
       <div class="col-sm-3">
         <div class="userList">
-          {{!-- <img class="songImg" id="albumIcon"
-            src="{{this.album_cover}}"
-            alt="kanye West album cover, teddy bear"> --}}
-          <p class="words">Title: {{this.plName}}</p>
-          {{!-- <p class="words" id="artistName">Artist: {{this.artist}}</p> --}}
-          <button type="button" class="btn btn-success">Play</button>
-          <button type="button" class="btn btn-success">Add Song</button>
+          <p class="words">Playlist: {{this.plName}}</p>
+          <button type="button" class="btn btn-success">Go to playlist</button>
         </div>
       </div>
       {{/each}}
