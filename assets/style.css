@@ -16,6 +16,7 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
+align-items: right !important;
 }
 
 /* Place text in the middle of the image */
@@ -31,6 +32,7 @@ color: white;
 h2 {
 padding-top: 40px;
 padding-bottom: 40px;
+right: 300px;
 }
 
 @media (min-width: 576px) {
@@ -44,6 +46,7 @@ padding-bottom: 40px;
     flex-basis: 35%;
     margin-right: 15px;
     margin-left: 15px;
+
 }
 
 }
@@ -76,7 +79,8 @@ padding-bottom: 40px;
   width: 128px;
   height: 128px;
   margin-left: 25px;
-  margin-right: 10px;
+  margin-right: 10px; 
+  
 
 }
 
