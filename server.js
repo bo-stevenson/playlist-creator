@@ -1,7 +1,14 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+const cors = require("cors");
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*"
+  })
+);
 
 const PORT = process.env.PORT || 8080;
 
