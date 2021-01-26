@@ -5,6 +5,17 @@ router.post("/playlist", async (req, res) => {
   res.json(await db.Playlist.create(req.body));
 });
 
+router.post("/Song", async (req, res) => {
+  res.json(await db.Song.create(req.body));
+});
+
+router.post("/associateSongPlaylist", async (req, res) => {
+  // if add songs is undefined need to retrieve playlist by id, put id into variable
+  // then retrieve3 song by id, store in variable
+  // then call addSongs on the object retrieved
+  res.json(await req.body.playlist.addSongs([req.body.song]));
+});
+
 router.get("/", async (req, res) => {
   const dataPlaylist = JSON.parse(JSON.stringify(await db.Playlist.findAll()));
   console.log(dataPlaylist);

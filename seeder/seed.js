@@ -61,14 +61,14 @@ const db = require("../models");
       id: 1
     }
   });
-  const song2 = await db.Song.findOne({
-    where: {
-      id: 2
-    }
-  });
+  // const song2 = await db.Song.findOne({
+  //   where: {
+  //     id: 2
+  //   }
+  // });
 
   // adding the association
-  await pList1.addSongs([song1, song2]);
+  await pList1.addSongs([song1]);
 
   console.log("Data seeded successfully!");
   process.exit(0);

@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataType) {
     }
   });
   Playlist.associate = function(models) {
-    Playlist.hasMany(models.Song);
+    Playlist.belongsToMany(models.Song, { through: "SongPlaylist" });
   };
   return Playlist;
 };
