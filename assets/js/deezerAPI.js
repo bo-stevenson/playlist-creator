@@ -34,7 +34,7 @@ $("#songSearchBtn").on("click", (event) => {
 });
 
 function getSongDiv(songMeta) {
-  console.log();
+  console.log(songMeta);
   const oc =
     "createSongAddToPlaylist('" +
     songMeta.artist.name +
@@ -47,6 +47,7 @@ function getSongDiv(songMeta) {
     "','" +
     songMeta.preview +
     "')";
+  const ps = "playSong('" + songMeta.preview + "')";
   return (
     `<div class="col-sm-3">
   <div class="userList">
@@ -55,7 +56,10 @@ function getSongDiv(songMeta) {
       alt="Album Art Image">
     <p class="words">Title: <span>${songMeta.title}</span></p>
     <p class="words">Artist: <span>${songMeta.artist.name}</span></p>
-    <button type="button" class="btn btn-success" onClick="${songMeta.preview}">Play song</button>
+    <button type="button" class="btn btn-success" onClick="` +
+    ps +
+    `">Play Song</button>
+    <button type="button" class="btn btn-success" onClick="pauseSong()">Pause Song</button>
     <button type="button" class="btn btn-success" onClick="` +
     oc +
     `">Add Song</button>
@@ -79,23 +83,42 @@ function createSongAddToPlaylist(artist, songName, cover, title, preview) {
     method: "POST",
     data: song
   }).then((response) => {
+    const songPlaylist = {};
     // const songPlaylist = {};
+    songPlaylist.song = response;
+    console.log(response);
     // songPlaylist.song = response.data?;
     // need to somehow select a specific playlist from user
     // const playlist = {};
+    const playlist = {};
+    playlist.id = 1;
     // playlist.id = 1;
+    songPlaylist.playlist = playlist;
     // songPlaylist.playlist = playlist;
     // const url = "/associateSongPlaylist";
+    const url = "/associateSongPlaylist";
     // now make ajax call
-    // data is songPlaylist
-    // url is url
-    // method is POST
-    // console.log(response);
+    $.ajax({
+      url: url,
+      method: "POST",
+      data: songPlaylist
+    }).then((response) => {
+      // console.log(response);
+      // data is songPlaylist
+      // url is url
+      // method is POST
+      // console.log(response);
+    });
   });
 }
 
-function listenToSong(data) {
-  console.log(data);
+// const music = document.getElementById("myAudioSrc");
+const myAudio = document.getElementById("myAudio");
+function playSong(mp3FileName) {
+  myAudio.src = mp3FileName;
+  myAudio.play();
 }
 
-listenToSong();
+function pauseSong() {
+  document.getElementById("myAudio").pause();
+}

@@ -10,16 +10,34 @@ router.post("/Song", async (req, res) => {
 });
 
 router.post("/associateSongPlaylist", async (req, res) => {
-  // if add songs is undefined need to retrieve playlist by id, put id into variable
-  // then retrieve3 song by id, store in variable
-  // then call addSongs on the object retrieved
-  res.json(await req.body.playlist.addSongs([req.body.song]));
+  const playlistId = req.body.playlist.id;
+  const songId = req.body.song.id;
+  const playlist = await db.Playlist.findOne({
+    where: {
+      id: playlistId
+    }
+  });
+  const song = await db.Song.findOne({
+    where: {
+      id: songId
+    }
+  });
+  res.json(playlist.addSongs([song]));
 });
 
 router.get("/", async (req, res) => {
-  const dataPlaylist = JSON.parse(JSON.stringify(await db.Playlist.findAll()));
-  console.log(dataPlaylist);
-  res.render("index", { playlist: dataPlaylist });
+  const dpJson = [];
+  const dataPlaylist = await db.Playlist.findAll();
+  for (let i = 0; i < dataPlaylist.length; i++) {
+    const playSong = {};
+    const playlist = dataPlaylist[i];
+    playSong.playlist = playlist;
+    const songs = await playlist.getSongs();
+    playSong.songs = songs;
+    dpJson[i] = playSong;
+  }
+  const dataPlaylistJson = JSON.parse(JSON.stringify(dpJson));
+  res.render("index", { playlist: dataPlaylistJson });
 });
 
 router.get("/playlist/:id", async (req, res) => {
