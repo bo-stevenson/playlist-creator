@@ -15,12 +15,17 @@ function searchSong(song) {
     url: queryURL,
     method: "GET"
   }).then((response) => {
-    console.log("API call made");
-    console.log(response);
-    $(songTitle).html(response.data[0].title);
-    $(artist).html(response.data[0].artist.name);
-    $(albumName).html(response.data[0].album.title);
-    $(icon).html(response.data[0].album.cover_medium);
+    if (response.data.length > 0) {
+      $(searchedSongContainer).removeClass("displayNone");
+      $(searchedSongContainer).addClass("container");
+      $(searchedSongRow).html("");
+      for (let i = 0; i < response.data.length; i++) {
+        $(searchedSongRow).append(getSongDiv(response.data[i]));
+      }
+      // $(artist).html(response.data[0].artist.name);
+      // $(albumName).html(response.data[0].album.title);
+      // $(icon).html(response.data[0].album.cover_medium);
+    }
   });
 }
 console.log("hello");
@@ -32,3 +37,17 @@ $("#songSearchBtn").on("click", (event) => {
     searchSong(song);
   }
 });
+
+function getSongDiv(songMeta) {
+  return `<div class="col-sm-3">
+  <div class="userList">
+    <img class="songImg"
+      src=""
+      alt="Album Art Image">
+    <p class="words">Title: <span>${songMeta.title}</span></p>
+    <p class="words">Artist: <span></span></p>
+    <button type="button" class="btn btn-success" onClick="">Play song</button>
+    <button type="button" class="btn btn-success" onClick="">Add Song</button>
+  </div>
+</div>`;
+}

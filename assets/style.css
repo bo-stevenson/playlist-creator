@@ -3,61 +3,6 @@ body, html {
   background-image: url("./photos/Vanishing-Stripes.svg");
 }
 
-/* The hero image */A
-.hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.219)), url("assets/banner-background.jpg");
-
-/* Set a specific height */
-height: 50%;
-
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-align-items: right !important;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: white;
-}
-
-h2 {
-padding-top: 40px;
-padding-bottom: 40px;
-right: 300px;
-}
-
-@media (min-width: 576px) {
-.card-group.card-group-scroll {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    margin: 10px;
-}
-
-.card-group.card-group-scroll > .card {
-    flex-basis: 35%;
-    margin-right: 15px;
-    margin-left: 15px;
-
-}
-
-}
-
-#uomlogo{
-
-  width: 100%;
-  height: auto;
-
-}
-
 .Image {
   display: block;
   margin-left: auto;
@@ -80,11 +25,10 @@ right: 300px;
   height: 128px;
   margin-left: 25px;
   margin-right: 10px; 
-  
-
 }
 
 .words {
+  text-align: center;
   color: white;
 }
 
@@ -92,10 +36,17 @@ right: 300px;
   color: white;
 }
 
+.displayNone {
+  display: none;
+}
 .container {
   width: 100%;
 }
 
 .col-sm-3 {
   margin-bottom: 20px;
+}
+
+.header {
+  text-align: center;
 }
