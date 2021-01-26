@@ -45,7 +45,7 @@ function getSongDiv(songMeta) {
     "')";
   const ps = "playSong('" + songMeta.preview + "')";
   return (
-    `<div class="col-sm-2">
+    `<div class="col-sm-4">
   <div class="userList">
     <img class="songImg"
       src="${songMeta.album.cover}"
@@ -66,6 +66,7 @@ function getSongDiv(songMeta) {
 
 // eslint-disable-next-line no-unused-vars
 function createSongAddToPlaylist(artist, songName, cover, title, preview) {
+  console.log(cover);
   const song = {};
   song.artist = artist;
   // eslint-disable-next-line camelcase
