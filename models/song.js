@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataType) {
     }
   });
   Song.associate = function(models) {
-    Song.belongsTo(models.Playlist);
+    Song.belongsToMany(models.Playlist, { through: "SongPlaylist" });
   };
   return Song;
 };
