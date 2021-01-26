@@ -1,9 +1,5 @@
 /* eslint-disable prefer-const */
 let song = "";
-let icon = $("#albumIcon");
-let songTitle = $("#songTitle");
-let albumName = $("#albumName");
-let artist = $("#artistName");
 let songSearch = $("#songSearch");
 function searchSong(song) {
   const queryURL =
@@ -68,11 +64,15 @@ function getSongDiv(songMeta) {
   );
 }
 
+// eslint-disable-next-line no-unused-vars
 function createSongAddToPlaylist(artist, songName, cover, title, preview) {
   const song = {};
   song.artist = artist;
+  // eslint-disable-next-line camelcase
   song.song_name = songName;
+  // eslint-disable-next-line camelcase
   song.album_cover = cover;
+  // eslint-disable-next-line camelcase
   song.album_name = title;
   song.songURL = preview;
 
@@ -102,7 +102,7 @@ function createSongAddToPlaylist(artist, songName, cover, title, preview) {
       url: url,
       method: "POST",
       data: songPlaylist
-    }).then((response) => {
+    }).then(() => {
       // console.log(response);
       // data is songPlaylist
       // url is url
@@ -114,11 +114,13 @@ function createSongAddToPlaylist(artist, songName, cover, title, preview) {
 
 // const music = document.getElementById("myAudioSrc");
 const myAudio = document.getElementById("myAudio");
+// eslint-disable-next-line no-unused-vars
 function playSong(mp3FileName) {
   myAudio.src = mp3FileName;
   myAudio.play();
 }
 
+// eslint-disable-next-line no-unused-vars
 function pauseSong() {
   document.getElementById("myAudio").pause();
 }
