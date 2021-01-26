@@ -45,7 +45,7 @@ function getSongDiv(songMeta) {
     "')";
   const ps = "playSong('" + songMeta.preview + "')";
   return (
-    `<div class="col-sm-3">
+    `<div class="col-sm-2">
   <div class="userList">
     <img class="songImg"
       src="${songMeta.album.cover}"
@@ -118,6 +118,7 @@ const myAudio = document.getElementById("myAudio");
 function playSong(mp3FileName) {
   myAudio.src = mp3FileName;
   myAudio.play();
+  // document.getElementById("myAudio").pause();
 }
 
 // eslint-disable-next-line no-unused-vars

@@ -13,7 +13,7 @@
 </div> 
 
 <!--- SEARCHED SONG --->
-<h1 class="words">Searched Song</h1>
+<h1 class="words">Searched Song's</h1>
 <div id="searchedSongContainer" class="displayNone">
   <div id="searchedSongRow" class="row">
   </div>
@@ -21,18 +21,24 @@
 
 <!--- CREATED PLAYLIST-->
 <h2 class="words">Playlist</h2>
+<hr class="hr">
 <div class="container">
   <div class="row">
     {{#each playlist}}
-    <div class="col-sm-3">
+    {{#each this.songs}}
+    <div class="col-sm-2">
       <div class="userList">
-        <p class="words">Playlist: {{this.playlist.plName}}</p>
-        {{#each this.songs}}
+        <p class="words">Playlist: Video Games</p>
+        <img class="songImg" id="im"
+          src="{{this.album_cover}}"
+          alt="Album Cover Image">
           <p class="words">Artist: {{this.artist}}</p>
           <p class="words">Song: {{this.song_name}}</p>
-        {{/each}}
+          <button type="button" class="btnPlay btn btn-success" onClick="{{this.songURL}}">Play Song</button>
+          <button type="button" class="btnPlay btn btn-success" onClick="pauseSong()">Pause Song</button>
       </div>
     </div>
+    {{/each}}
     {{/each}}
   </div>
 </div>

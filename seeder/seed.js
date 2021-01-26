@@ -43,26 +43,26 @@ const db = require("../models");
   ];
   await db.Playlist.bulkCreate(playlist);
 
-  const pList1 = await db.Playlist.findOne({
-    where: {
-      id: 1
-    }
-  });
-
-  // finding a token (instance)
-  const song1 = await db.Song.findOne({
-    where: {
-      id: 1
-    }
-  });
-  // const song2 = await db.Song.findOne({
+  // const pList1 = await db.Playlist.findOne({
   //   where: {
-  //     id: 2
+  //     id: 1
   //   }
   // });
 
-  // adding the association
-  await pList1.addSongs([song1]);
+  // // finding a token (instance)
+  // const song1 = await db.Song.findOne({
+  //   where: {
+  //     id: 1
+  //   }
+  // });
+  // // const song2 = await db.Song.findOne({
+  // //   where: {
+  // //     id: 2
+  // //   }
+  // // });
+
+  // // adding the association
+  // await pList1.addSongs([song1]);
 
   console.log("Data seeded successfully!");
   process.exit(0);
