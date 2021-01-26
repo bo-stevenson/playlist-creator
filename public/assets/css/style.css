@@ -57,3 +57,13 @@ body, html {
   color: white;
   height: 50px;
 }
+
+.btn-success {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+#songSearch {
+  margin-left: 40%;
+}
