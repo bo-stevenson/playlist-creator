@@ -10,7 +10,6 @@ function searchSong(song) {
     "https://cors-anywhere.herokuapp.com/" +
     "https://api.deezer.com/search/track?q=" +
     song;
-  console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -25,18 +24,17 @@ function searchSong(song) {
     }
   });
 }
-console.log("hello");
 $("#songSearchBtn").on("click", (event) => {
   event.preventDefault();
   if (songSearch.val().trim() !== "") {
     song = songSearch.val().trim();
-    console.log(song);
+    // console.log(song);
     searchSong(song);
   }
 });
 
 function getSongDiv(songMeta) {
-  console.log(songMeta);
+  console.log();
   const oc =
     "createSongAddToPlaylist('" +
     songMeta.artist.name +
@@ -57,9 +55,7 @@ function getSongDiv(songMeta) {
       alt="Album Art Image">
     <p class="words">Title: <span>${songMeta.title}</span></p>
     <p class="words">Artist: <span>${songMeta.artist.name}</span></p>
-    <button type="button" class="btn btn-success" onClick="` +
-    oc +
-    `">Play song</button>
+    <button type="button" class="btn btn-success" onClick="${songMeta.preview}">Play song</button>
     <button type="button" class="btn btn-success" onClick="` +
     oc +
     `">Add Song</button>
@@ -94,6 +90,12 @@ function createSongAddToPlaylist(artist, songName, cover, title, preview) {
     // data is songPlaylist
     // url is url
     // method is POST
-    console.log(response);
+    // console.log(response);
   });
 }
+
+function listenToSong(data) {
+  console.log(data);
+}
+
+listenToSong();
