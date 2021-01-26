@@ -1,3 +1,7 @@
+<audio id="myAudio">
+  <source src="" type="audio/mpeg">
+</audio>
+
 <h1 class="words">Music</h1>
 <div class="hero-image">
   <div class="hero-text text-center">
@@ -16,14 +20,17 @@
 </div>
 
 <!--- CREATED PLAYLIST-->
-<h2 class="words">Your created Playlist's!</h2>
+<h2 class="words">Playlist</h2>
 <div class="container">
   <div class="row">
     {{#each playlist}}
     <div class="col-sm-3">
       <div class="userList">
-        <p class="words">Playlist: {{this.plName}}</p>
-        <button type="button" class="btn btn-success">Go to playlist</button>
+        <p class="words">Playlist: {{this.playlist.plName}}</p>
+        {{#each this.songs}}
+          <p class="words">Artist: {{this.artist}}</p>
+          <p class="words">Song: {{this.song_name}}</p>
+        {{/each}}
       </div>
     </div>
     {{/each}}

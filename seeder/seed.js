@@ -39,12 +39,6 @@ const db = require("../models");
   const playlist = [
     {
       plName: "Playlist 1"
-    },
-    {
-      plName: "Playlist 2"
-    },
-    {
-      plName: "Playlist 3"
     }
   ];
   await db.Playlist.bulkCreate(playlist);
