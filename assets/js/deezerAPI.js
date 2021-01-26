@@ -36,6 +36,7 @@ $("#songSearchBtn").on("click", (event) => {
 });
 
 function getSongDiv(songMeta) {
+  console.log(songMeta);
   const oc =
     "createSongAddToPlaylist('" +
     songMeta.artist.name +
@@ -52,11 +53,13 @@ function getSongDiv(songMeta) {
     `<div class="col-sm-3">
   <div class="userList">
     <img class="songImg"
-      src=""
+      src="${songMeta.album.cover}"
       alt="Album Art Image">
     <p class="words">Title: <span>${songMeta.title}</span></p>
-    <p class="words">Artist: <span></span></p>
-    <button type="button" class="btn btn-success" onClick="">Play song</button>
+    <p class="words">Artist: <span>${songMeta.artist.name}</span></p>
+    <button type="button" class="btn btn-success" onClick="` +
+    oc +
+    `">Play song</button>
     <button type="button" class="btn btn-success" onClick="` +
     oc +
     `">Add Song</button>
