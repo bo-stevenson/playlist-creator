@@ -34,7 +34,7 @@
           alt="Album Cover Image">
           <p class="words">Artist: {{this.artist}}</p>
           <p class="words">Song: {{this.song_name}}</p>
-          <button type="button" class="btnPlay btn btn-success" onClick="{{this.songURL}}">Play Song</button>
+          <button type="button" class="btnPlay btn btn-success" onClick="playSong('{{this.songURL}}')">Play Song</button>
           <button type="button" class="btnPlay btn btn-success" onClick="pauseSong()">Pause Song</button>
       </div>
     </div>
