@@ -6,7 +6,6 @@ router.post("/playlist", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  console.log(await db.Playlist.findAll());
   const dataPlaylist = JSON.parse(JSON.stringify(await db.Playlist.findAll()));
   console.log(dataPlaylist);
   res.render("index", { playlist: dataPlaylist });
