@@ -10,7 +10,7 @@ app.use(
   })
 );
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3306;
 
 app.use("/public", express.static("public"));
 
