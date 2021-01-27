@@ -73,8 +73,7 @@ npm install body-parser<br>
 * Delete a song from a playlist
 * Automatically refresh to save results
 * Add authentication
-
-
+git 
 # Contributors
 ## Contributors 
 <a href="https://github.com/bo-stevenson/playlist-creator/graphs/contributors">
