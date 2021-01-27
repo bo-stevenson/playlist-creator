@@ -1,4 +1,4 @@
-# Project 2
+# Playlist creator
 
 -.
 
@@ -7,14 +7,20 @@
   <img src="-" height="40%" width="50%" title="Project 2 Preview">
 </p>
 
+# Overview
+
+An App that lets users search for songs and create a playlist.
+
 # Table of Contents 
   
-  * [Installation](#installation)
+  * [`Installation](#installation)
   
   * [Requirements](#requirements)
   
   * [Built&nbsp;With](#builtwith)
-  
+
+  * [Future Improvements](#Future Improvement)
+
   * [Contributors](#contributors)
   
   * [License](#license)
@@ -23,7 +29,13 @@
 
 # Installation
 
-To run this code, download the zip file, or use GitHub's guidelines to clone the repository.
+1. creating a folder which will contain our app and within it type the following command to create the JSON file containing all the information and dependencies: 
+2. Use the command-line, npm i, to install Express, Express-Handlebars, and mysql npm.
+3. Use the command-line "npm run seed
+4. Now we create our main js file which will contain our application’s logic and name it “index.js”
+5. To start creating, devouring using Express, use the command, node server.js and navigate in the
+web browser to localhost:8080.
+ 6. Finally, let’s create a folder by the name of “public” in which we create a .css file and let’s call it “style.css” and we’re good to go.
 
 # Requirements
 
@@ -36,7 +48,7 @@ To run this code, download the zip file, or use GitHub's guidelines to clone the
 
 
 # Front - End Usage
-Live Link: -
+Deployed: https://polar-forest-29816.herokuapp.com/
 
 
 # Back - End Usage
@@ -55,13 +67,19 @@ npm install body-parser<br>
 * [Handlebars](https://handlebarsjs.com/)
 * [Express](https://expressjs.com/)
 
+# Future Improvements
+* Create multiple playlists
+* Delete a playlist
+* Delete a song from a playlist
+* Automatically refresh to save results
+* Add authentication
+
 
 # Contributors
 ## Contributors 
 <a href="https://github.com/bo-stevenson/playlist-creator/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=bo-stevenson/playlist-creator" />
 </a>
-Masno Abdulaya
 
 Made with [contributors-img](https://contributors-img.web.app).
 
